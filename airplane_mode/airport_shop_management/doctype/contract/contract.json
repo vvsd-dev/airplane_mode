@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:LEASE-{airport_code}-{###}",
+ "creation": "2023-10-19 17:22:40.938009",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tenant",
+  "tenant_type",
+  "column_break_i0ndd",
+  "shop",
+  "airport",
+  "airport_code",
+  "lease_information_section",
+  "start_date",
+  "amount_per_month",
+  "column_break_ukbwk",
+  "end_date",
+  "amended_from",
+  "status",
+  "cr"
+ ],
+ "fields": [
+  {
+   "fieldname": "tenant",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Tenant",
+   "options": "Tenant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop"
+  },
+  {
+   "fetch_from": "shop.airport",
+   "fieldname": "airport",
+   "fieldtype": "Link",
+   "label": "Airport",
+   "options": "Airport",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lease_information_section",
+   "fieldtype": "Section Break",
+   "label": "Lease Information"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "column_break_ukbwk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "amount_per_month",
+   "fieldtype": "Currency",
+   "label": "Amount Per Month",
+   "options": "cr"
+  },
+  {
+   "fetch_from": "airport.code",
+   "fieldname": "airport_code",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Airport Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Contract",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_i0ndd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "tenant.type",
+   "fieldname": "tenant_type",
+   "fieldtype": "Data",
+   "label": "Tenant Type",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "In Talks",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "In Talks\nActive\nExpired\nTerminated",
+   "read_only": 1
+  },
+  {
+   "default": "TZS",
+   "fieldname": "cr",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-19 18:48:30.936324",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Contract",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Green",
+   "title": "In Talks"
+  },
+  {
+   "color": "Blue",
+   "title": "Active"
+  },
+  {
+   "color": "Orange",
+   "title": "Expired"
+  },
+  {
+   "color": "Red",
+   "title": "Terminated"
+  }
+ ],
+ "track_changes": 1
+}

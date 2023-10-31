@@ -1,0 +1,9 @@
+# Copyright (c) 2023, Ibrahim Malinza and contributors
+# For license information, please see license.txt
+
+# import frappe
+from frappe.model.document import Document
+
+class CrewMembers(Document):
+	def before_save(self):
+		self.full_name = " ".join(filter(None, [self.first_name, self.last_name]))

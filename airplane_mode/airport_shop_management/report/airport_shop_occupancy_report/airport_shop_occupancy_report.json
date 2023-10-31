@@ -1,0 +1,64 @@
+{
+ "add_total_row": 0,
+ "columns": [
+  {
+   "fieldname": "airport_name",
+   "fieldtype": "Data",
+   "label": "Airport Name",
+   "width": 0
+  },
+  {
+   "fieldname": "total_shops",
+   "fieldtype": "Data",
+   "label": "Total Shops",
+   "width": 0
+  },
+  {
+   "fieldname": "occupied_shops",
+   "fieldtype": "Data",
+   "label": "Occupied Shop",
+   "width": 0
+  },
+  {
+   "fieldname": "available_shops",
+   "fieldtype": "Data",
+   "label": "Available Shops",
+   "width": 0
+  },
+  {
+   "fieldname": "renovation_shops",
+   "fieldtype": "Data",
+   "label": "Renovation in Progress",
+   "width": 0
+  },
+  {
+   "fieldname": "closed_shops",
+   "fieldtype": "Data",
+   "label": "Closed Shops",
+   "width": 0
+  }
+ ],
+ "creation": "2023-10-19 16:33:25.028212",
+ "disable_prepared_report": 0,
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "modified": "2023-10-19 16:42:08.884611",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Airport Shop Occupancy Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\r\n    a.name AS airport_name,\r\n    COUNT(s.name) AS total_shops,\r\n    SUM(CASE WHEN s.status = 'Rented' THEN 1 ELSE 0 END) AS rented_shops,\r\n    SUM(CASE WHEN s.status = 'Available' THEN 1 ELSE 0 END) AS available_shops,\r\n    SUM(CASE WHEN s.status = 'Under Renovation' THEN 1 ELSE 0 END) AS renovation_shops,\r\n    SUM(CASE WHEN s.status = 'Closed' THEN 1 ELSE 0 END) AS closed_shops\r\nFROM\r\n    `tabAirport` AS a\r\nLEFT JOIN\r\n    `tabShop` AS s ON a.name = s.airport\r\nGROUP BY\r\n    a.name;\r\n",
+ "ref_doctype": "Shop",
+ "report_name": "Airport Shop Occupancy Report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}

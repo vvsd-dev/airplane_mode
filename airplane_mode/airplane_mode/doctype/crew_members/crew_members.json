@@ -1,0 +1,196 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2023-10-19 10:30:25.267849",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "personal_information_section",
+  "first_name",
+  "full_name",
+  "date_of_birth",
+  "column_break_hjobd",
+  "last_name",
+  "status",
+  "date_of_joining",
+  "naming_series",
+  "image",
+  "passport_information_section",
+  "passport_number",
+  "issuing_country",
+  "column_break_9k2pa",
+  "nationality",
+  "expiration_date",
+  "airline_details_section",
+  "airline",
+  "column_break_r2lcr",
+  "roleposition"
+ ],
+ "fields": [
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "First Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "label": "Full Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "default": "Today",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "label": "Date of Joining"
+  },
+  {
+   "fieldname": "airline",
+   "fieldtype": "Link",
+   "label": "Airline",
+   "options": "Airline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_hjobd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Last Name",
+   "reqd": 1
+  },
+  {
+   "default": "Active",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nOn Leave\nRetired"
+  },
+  {
+   "fieldname": "roleposition",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Role/Position",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality"
+  },
+  {
+   "default": ".airline.-crew-member-.###",
+   "fieldname": "naming_series",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Naming Series",
+   "read_only": 1
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image"
+  },
+  {
+   "fieldname": "passport_information_section",
+   "fieldtype": "Section Break",
+   "label": "Passport Information"
+  },
+  {
+   "fieldname": "passport_number",
+   "fieldtype": "Data",
+   "label": "Passport Number"
+  },
+  {
+   "fieldname": "issuing_country",
+   "fieldtype": "Link",
+   "label": "Issuing Country",
+   "options": "Country"
+  },
+  {
+   "fieldname": "column_break_9k2pa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "expiration_date",
+   "fieldtype": "Date",
+   "label": "Expiration Date"
+  },
+  {
+   "fieldname": "personal_information_section",
+   "fieldtype": "Section Break",
+   "label": "Personal Information"
+  },
+  {
+   "fieldname": "airline_details_section",
+   "fieldtype": "Section Break",
+   "label": "Airline Details"
+  },
+  {
+   "fieldname": "column_break_r2lcr",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Assigned Crew Members",
+   "link_fieldname": "crew_member"
+  }
+ ],
+ "modified": "2023-10-19 11:15:49.357465",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Crew Members",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "airline,roleposition",
+ "show_preview_popup": 1,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [
+  {
+   "color": "Blue",
+   "title": "Active"
+  },
+  {
+   "color": "Cyan",
+   "title": "On Leave"
+  },
+  {
+   "color": "Red",
+   "title": "Retired"
+  }
+ ],
+ "title_field": "full_name"
+}

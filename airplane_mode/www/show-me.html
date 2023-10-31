@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Rectangle</title>
+</head>
+<body>
+    {% if frappe.form_dict.color %}
+        <div style="width: 200px; height: 100px; background-color: {{ frappe.form_dict.color }};"></div>
+    {% else %}
+        <div style="width: 200px; height: 100px; background-color: black;"></div>
+    {% endif %}
+</body>
+</html>

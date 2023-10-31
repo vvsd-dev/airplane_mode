@@ -1,0 +1,100 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{MM}-{YYYY}-{####}",
+ "creation": "2023-10-19 11:01:38.383900",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "flight_number",
+  "airplane",
+  "airline",
+  "column_break_0znvv",
+  "crew_member",
+  "roleposition",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "flight_number",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Flight Number",
+   "options": "Airplane Flight",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "flight_number.airplane",
+   "fieldname": "airplane",
+   "fieldtype": "Link",
+   "label": "Airplane",
+   "options": "Airplane",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_0znvv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "crew_member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Crew Member",
+   "options": "Crew Members",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Assigned Crew Members",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fetch_from": "airplane.airline",
+   "fieldname": "airline",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Airline",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "crew_member.roleposition",
+   "fieldname": "roleposition",
+   "fieldtype": "Data",
+   "label": "Role/Position",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2023-10-19 11:13:11.615918",
+ "modified_by": "Administrator",
+ "module": "Airplane Mode",
+ "name": "Assigned Crew Members",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

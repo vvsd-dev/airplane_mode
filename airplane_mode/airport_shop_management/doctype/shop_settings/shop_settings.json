@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-10-20 10:11:55.368111",
+ "default_view": "List",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "notification_preference",
+  "column_break_j97rb",
+  "payment_frequency"
+ ],
+ "fields": [
+  {
+   "default": "Allow",
+   "fieldname": "notification_preference",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Notification Preference",
+   "options": "Allow\nDisabled",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "description": "This should be in months where and should determine the next due date",
+   "fieldname": "payment_frequency",
+   "fieldtype": "Int",
+   "label": "Payment Frequency",
+   "non_negative": 1
+  },
+  {
+   "fieldname": "column_break_j97rb",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2023-10-20 10:36:33.111676",
+ "modified_by": "Administrator",
+ "module": "Airport Shop Management",
+ "name": "Shop Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
