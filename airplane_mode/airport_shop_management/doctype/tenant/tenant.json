@@ -18,7 +18,8 @@
   "contact_person_section",
   "name1",
   "column_break_uvgzv",
-  "phone_no"
+  "phone_no",
+  "shop"
  ],
  "fields": [
   {
@@ -81,6 +82,12 @@
    "fieldname": "residence_address",
    "fieldtype": "Small Text",
    "label": "Residence Address"
+  },
+  {
+   "fieldname": "shop",
+   "fieldtype": "Link",
+   "label": "Shop",
+   "options": "Shop"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -94,7 +101,7 @@
    "link_fieldname": "tenant"
   }
  ],
- "modified": "2023-10-20 11:32:35.421145",
+ "modified": "2024-05-30 07:06:22.145146",
  "modified_by": "Administrator",
  "module": "Airport Shop Management",
  "name": "Tenant",
